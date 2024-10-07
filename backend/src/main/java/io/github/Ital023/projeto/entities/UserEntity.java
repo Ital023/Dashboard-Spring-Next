@@ -37,9 +37,14 @@ public class UserEntity {
         this.email = email;
     }
 
-    public UserEntity(UserDTO userDTO) {
-        BeanUtils.copyProperties(userDTO, this);
+    public UserEntity(UserDTO dto) {
+        this.id = dto.getId();
+        this.name = dto.getName();
+        this.login = dto.getLogin();
+        this.password = dto.getPassword();
+        this.email = dto.getEmail();
     }
+
 
     public Long getId() {
         return id;

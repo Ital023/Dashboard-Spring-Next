@@ -23,7 +23,11 @@ public class UserDTO {
     }
 
     public UserDTO(UserEntity user) {
-        BeanUtils.copyProperties(user, this);
+        this.id = user.getId();
+        this.name = user.getName();
+        this.login = user.getLogin();
+        this.password = user.getPassword();
+        this.email = user.getEmail();
     }
 
     public Long getId() {

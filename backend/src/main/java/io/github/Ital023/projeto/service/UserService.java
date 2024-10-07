@@ -16,7 +16,7 @@ public class UserService {
 
     public List<UserDTO> findAll() {
         List<UserEntity> users = repository.findAll();
-        return users.stream().map(UserDTO::new).toList();
+        return users.stream().map(x -> new UserDTO(x)).toList();
     }
 
     public void insert(UserDTO dto) {
