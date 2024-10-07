@@ -1,6 +1,8 @@
 package io.github.Ital023.projeto.entities;
 
+import io.github.Ital023.projeto.dto.UserDTO;
 import jakarta.persistence.*;
+import org.springframework.beans.BeanUtils;
 
 import java.util.Objects;
 
@@ -33,6 +35,10 @@ public class UserEntity {
         this.login = login;
         this.password = password;
         this.email = email;
+    }
+
+    public UserEntity(UserDTO userDTO) {
+        BeanUtils.copyProperties(userDTO, this);
     }
 
     public Long getId() {
